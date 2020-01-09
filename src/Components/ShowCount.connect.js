@@ -3,12 +3,12 @@ import {
     connect
 } from 'react-redux'
 
-const ShowCount = ({ count }) => (
-    <div>count: {count}</div>
+const ShowCount = ({ counter }) => (
+    <div>count: {counter}</div>
 )
 
-const mapStatetoProps = ({ count }) => {
-    return { count };
+const mapStatetoProps = ({ counter }) => {
+    return { counter };
 }
 
 export default connect(

@@ -1,9 +1,11 @@
+import { createSlice } from '@reduxjs/toolkit'
+
 import {
     INCREMENT,
     DECREMENT
 } from '../action.config'
 
-function counter (state = 0, action) {
+export const counterReducer = (state = 0, action) => {
     console.log('action: ', action);
     switch (action.type) {
         case INCREMENT:
@@ -14,5 +16,24 @@ function counter (state = 0, action) {
             return state
     }
 }
+
+const counter = createSlice({
+    name: 'counter',
+    initialState: 0,
+    reducers: {
+        increment (state, action) {
+
+            state += 1;
+            return state
+
+        },
+        decrement (state, action) {
+
+            state -= 1
+            return state;
+
+        }
+    }
+})
 
 export default counter;

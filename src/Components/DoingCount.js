@@ -1,9 +1,11 @@
 import React from 'react';
-import { useDispatch } from 'react-redux'
-import {
+import { useDispatch } from 'react-redux';
+import counter from '../store/reducers/count';
+
+const {
     increment,
     decrement
-} from '../store/actions/count';
+} = counter.actions
 
 const DoingCount = () => {
 
@@ -17,7 +19,9 @@ const DoingCount = () => {
         >
             <div
                 onClick={() => {
-                    dispatch(increment())
+                    dispatch(increment({
+                        name: 'terry'
+                    }))
                 }}
             >
                 add
