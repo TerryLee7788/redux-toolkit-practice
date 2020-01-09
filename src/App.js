@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
+
+import ShowCount from './Components/ShowCount';
+import DoingCount from './Components/DoingCount';
+import ShowCountConnect from './Components/ShowCount.connect'
+import DoingCountConnect from './Components/DoingCount.connect'
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    return (
+        <div className="App">
+            <h3>reduxjs toolkit 版本</h3>
+            <ShowCount/>
+            <DoingCount/>
+            <hr/>
+            <h3>connet 版本</h3>
+            <ShowCountConnect/>
+            <DoingCountConnect/>
+        </div>
+    );
 }
 
 export default App;
