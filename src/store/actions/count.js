@@ -1,6 +1,7 @@
 import {
     INCREMENT,
-    DECREMENT
+    DECREMENT,
+    INCREMENT_ASYNC
 } from '../action.config'
 
 export const increment =  () => {
@@ -9,4 +10,8 @@ export const increment =  () => {
 
 export const decrement = () => {
     return { type: DECREMENT }
+}
+
+export const incrementAsync = () => {
+    return { type: INCREMENT_ASYNC }
 }

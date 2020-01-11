@@ -2,12 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux'
 import {
     increment,
-    decrement
+    decrement,
+    incrementAsync
 } from '../store/actions/count';
 
 const DoingCount = ({
     increment,
-    decrement
+    decrement,
+    incrementAsync
 }) => {
 
     return (
@@ -21,6 +23,12 @@ const DoingCount = ({
             >
                 add
             </div>
+
+            <div
+                onClick={incrementAsync}
+            >
+                非同步 add
+            </div>
             <div
                 onClick={decrement}
             >
@@ -33,7 +41,8 @@ const DoingCount = ({
 
 const mapDispatchToProps = {
     increment,
-    decrement
+    decrement,
+    incrementAsync
 };
 
 export default connect(
