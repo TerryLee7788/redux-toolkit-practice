@@ -1,9 +1,16 @@
 import { put, takeEvery, delay } from 'redux-saga/effects';
+import counter from '../reducers/count';
 import {
     INCREMENT,
 } from '../action.config'
 
-export function* incrementAsync () {
+const {
+    increment,
+    incrementAsync,
+    decrement
+} = counter.actions
+
+export function* incrementAsyncSuccess () {
 
     console.log('incrementAsync');
 
@@ -12,6 +19,17 @@ export function* incrementAsync () {
 
 }
 
+export function* incrementAsyncSuccessToolKit (action) {
+
+    console.log('incrementAsyncSuccessToolKit: ', action);
+    yield delay(1000);
+    yield put({
+        type: increment.type
+    });
+
+}
+
 export default function* rootSaga () {
-    yield takeEvery('INCREMENT_ASYNC', incrementAsync);
+    yield takeEvery('INCREMENT_ASYNC', incrementAsyncSuccess);
+    yield takeEvery(incrementAsync.type, incrementAsyncSuccessToolKit);
 }

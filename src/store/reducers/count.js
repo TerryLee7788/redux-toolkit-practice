@@ -27,6 +27,12 @@ const counter = createSlice({
             return state
 
         },
+        incrementAsync (state) {
+
+            // state += 1;
+            // return state
+
+        },
         decrement (state, action) {
 
             state -= 1

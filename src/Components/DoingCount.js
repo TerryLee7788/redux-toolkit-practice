@@ -4,6 +4,7 @@ import counter from '../store/reducers/count';
 
 const {
     increment,
+    incrementAsync,
     decrement
 } = counter.actions
 
@@ -25,6 +26,15 @@ const DoingCount = () => {
                 }}
             >
                 add
+            </div>
+            <div
+                onClick={() => {
+                    dispatch(incrementAsync({
+                        name: 'terry'
+                    }))
+                }}
+            >
+                非同步 add
             </div>
             <div
                 onClick={() => {
